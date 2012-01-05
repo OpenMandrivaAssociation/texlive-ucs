@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-ucs
 Version:	20100219
-Release:	1
+Release:	2
 Summary:	Extended UTF-8 input encoding for LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/unicode
