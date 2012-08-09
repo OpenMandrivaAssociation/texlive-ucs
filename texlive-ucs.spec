@@ -1,16 +1,17 @@
-# revision 17090
+# revision 26123
 # category Package
-# catalog-ctan /macros/latex/contrib/unicode
-# catalog-date 2010-02-19 00:25:14 +0100
-# catalog-license lppl
-# catalog-version undef
+# catalog-ctan /macros/latex/contrib/ucs
+# catalog-date 2012-04-21 18:17:42 +0200
+# catalog-license lppl1.3
+# catalog-version 2.0
 Name:		texlive-ucs
-Version:	20100219
-Release:	2
-Summary:	Extended UTF-8 input encoding for LaTeX
+Epoch:		1
+Version:	2.0
+Release:	1
+Summary:	Extended UTF-8 input encoding support for LaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/unicode
-License:	LPPL
+URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ucs
+License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ucs.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ucs.doc.tar.xz
 BuildArch:	noarch
@@ -19,12 +20,16 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 
 %description
-This bundle provides the ucs package, and utf8x.def, together
+The bundle provides the ucs package, and utf8x.def, together
 with a large number of support files. The utf8x.def definition
 file for use with inputenc covers a wider range of Unicode
 characters than does utf8.def in the LaTeX distribution. The
-ucs package provides facilities for efficient use of large sets
-of Unicode characters.
+package provides facilities for efficient use of its large sets
+of Unicode characters. Glyph production may be controlled by
+various options, which permits use of non-ASCII characters when
+coding mathematical formulae. Note that the bundle previously
+had an alias "unicode"; that alias has now been withdrawn, and
+no package of that name now exists.
 
 %post
     %{_sbindir}/texlive.post
@@ -36,15 +41,6 @@ of Unicode characters.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/ucs/UnicodeT.sfd
-%{_texmfdistdir}/tex/latex/ucs/autofe.sty
-%{_texmfdistdir}/tex/latex/ucs/c00enc.def
-%{_texmfdistdir}/tex/latex/ucs/c10enc.def
-%{_texmfdistdir}/tex/latex/ucs/c40enc.def
-%{_texmfdistdir}/tex/latex/ucs/c42enc.def
-%{_texmfdistdir}/tex/latex/ucs/c61enc.def
-%{_texmfdistdir}/tex/latex/ucs/cenccmn.tex
-%{_texmfdistdir}/tex/latex/ucs/cp1252.enc
 %{_texmfdistdir}/tex/latex/ucs/data/uni-0.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-1.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-100.def
@@ -109,6 +105,7 @@ of Unicode characters.
 %{_texmfdistdir}/tex/latex/ucs/data/uni-157.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-158.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-159.def
+%{_texmfdistdir}/tex/latex/ucs/data/uni-167.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-172.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-173.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-174.def
@@ -179,6 +176,7 @@ of Unicode characters.
 %{_texmfdistdir}/tex/latex/ucs/data/uni-4.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-40.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-42.def
+%{_texmfdistdir}/tex/latex/ucs/data/uni-44.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-46.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-468.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-469.def
@@ -187,6 +185,8 @@ of Unicode characters.
 %{_texmfdistdir}/tex/latex/ucs/data/uni-471.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-48.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-49.def
+%{_texmfdistdir}/tex/latex/ucs/data/uni-497.def
+%{_texmfdistdir}/tex/latex/ucs/data/uni-498.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-5.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-50.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-51.def
@@ -218,90 +218,106 @@ of Unicode characters.
 %{_texmfdistdir}/tex/latex/ucs/data/uni-99.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-global.def
 %{_texmfdistdir}/tex/latex/ucs/data/uninames.dat
-%{_texmfdistdir}/tex/latex/ucs/ldvarial.fd
-%{_texmfdistdir}/tex/latex/ucs/ldvc2000.fd
-%{_texmfdistdir}/tex/latex/ucs/ldvenc.def
-%{_texmfdistdir}/tex/latex/ucs/letc2000.fd
-%{_texmfdistdir}/tex/latex/ucs/letenc.def
-%{_texmfdistdir}/tex/latex/ucs/letgfzem.fd
-%{_texmfdistdir}/tex/latex/ucs/letjiret.fd
-%{_texmfdistdir}/tex/latex/ucs/lklenc.def
-%{_texmfdistdir}/tex/latex/ucs/lklkli.fd
-%{_texmfdistdir}/tex/latex/ucs/ltaarial.fd
-%{_texmfdistdir}/tex/latex/ucs/ltac2000.fd
-%{_texmfdistdir}/tex/latex/ucs/ltaenc.def
-%{_texmfdistdir}/tex/latex/ucs/ltgc2000.fd
-%{_texmfdistdir}/tex/latex/ucs/ltgenc.def
-%{_texmfdistdir}/tex/latex/ucs/ltlcmr.fd
-%{_texmfdistdir}/tex/latex/ucs/ltlenc.def
-%{_texmfdistdir}/tex/latex/ucs/ltwdsnol.fd
-%{_texmfdistdir}/tex/latex/ucs/ltwdsque.fd
-%{_texmfdistdir}/tex/latex/ucs/ltwdssin.fd
-%{_texmfdistdir}/tex/latex/ucs/ltwenc.def
-%{_texmfdistdir}/tex/latex/ucs/lucarial.fd
-%{_texmfdistdir}/tex/latex/ucs/lucc2000.fd
-%{_texmfdistdir}/tex/latex/ucs/lucenc.def
-%{_texmfdistdir}/tex/latex/ucs/mkrenc.def
-%{_texmfdistdir}/tex/latex/ucs/mkrezra.fd
-%{_texmfdistdir}/tex/latex/ucs/mkrhadas.fd
-%{_texmfdistdir}/tex/latex/ucs/mkromega.fd
-%{_texmfdistdir}/tex/latex/ucs/mkrrashi.fd
-%{_texmfdistdir}/tex/latex/ucs/t2dcmr.fd
-%{_texmfdistdir}/tex/latex/ucs/t2denc.def
-%{_texmfdistdir}/tex/latex/ucs/tengwarDS.enc
 %{_texmfdistdir}/tex/latex/ucs/ucs.sty
 %{_texmfdistdir}/tex/latex/ucs/ucsencs.def
 %{_texmfdistdir}/tex/latex/ucs/ucshyper.sty
 %{_texmfdistdir}/tex/latex/ucs/ucsutils.sty
 %{_texmfdistdir}/tex/latex/ucs/utf8x.def
-%{_texmfdistdir}/tex/latex/ucs/xscmr.fd
-%{_texmfdistdir}/tex/latex/ucs/xsenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/UnicodeT.sfd
+%{_texmfdistdir}/tex/latex/ucs/utils/autofe.sty
+%{_texmfdistdir}/tex/latex/ucs/utils/c00enc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/c10enc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/c40enc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/c42enc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/c61enc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/cenccmn.tex
+%{_texmfdistdir}/tex/latex/ucs/utils/cp1252.enc
+%{_texmfdistdir}/tex/latex/ucs/utils/ldvarial.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ldvc2000.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ldvenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/letc2000.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/letenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/letgfzem.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/letjiret.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/lklenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/lklkli.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltaarial.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltac2000.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltaenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/ltgc2000.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltgenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/ltlcmr.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltlenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/ltwdsnol.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltwdsque.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltwdssin.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/ltwenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/lucarial.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/lucc2000.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/lucenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/mkrenc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/mkrezra.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/mkrhadas.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/mkromega.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/mkrrashi.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/t2dcmr.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/t2denc.def
+%{_texmfdistdir}/tex/latex/ucs/utils/tengwarDS.enc
+%{_texmfdistdir}/tex/latex/ucs/utils/xscmr.fd
+%{_texmfdistdir}/tex/latex/ucs/utils/xsenc.def
 %doc %{_texmfdistdir}/doc/latex/ucs/FAQ
+%doc %{_texmfdistdir}/doc/latex/ucs/GNUmakefile
 %doc %{_texmfdistdir}/doc/latex/ucs/INSTALL
 %doc %{_texmfdistdir}/doc/latex/ucs/LICENSE
 %doc %{_texmfdistdir}/doc/latex/ucs/README
 %doc %{_texmfdistdir}/doc/latex/ucs/VERSION
-%doc %{_texmfdistdir}/doc/latex/ucs/config/ascii.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/boxdraw.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/braille.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-bg5.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-gb.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-globals.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-hangul.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-jis.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/combining.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/control.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/ctrlglyphs.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/currency.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/cyrillic.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/devanagari.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/ethiopic.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/geometric.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/greek.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/hebrew.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/ipa.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/klingon.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/latin-a.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/latin-b.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/latin-e-a.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/latin1.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/math.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/mathalpha.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/miscsymb.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/modifier.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/mongolian.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/pifont.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/punct.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/supersub.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/tags.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/telugu.ucf.gz
-%doc %{_texmfdistdir}/doc/latex/ucs/config/thai.ucf.gz
+%doc %{_texmfdistdir}/doc/latex/ucs/config/ascii.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/boxdraw.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/braille.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-bg5.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-gb.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-globals.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-hangul.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/cjk-jis.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/combining.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/control.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/ctrlglyphs.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/currency.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/cyrillic.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/devanagari.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/ethiopic.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/geometric.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/greek.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/hebrew.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/ipa.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/klingon.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/latin-a.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/latin-b.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/latin-e-a.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/latin1.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/math.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/mathalpha.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/miscsymb.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/modifier.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/mongolian.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/pifont.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/punct.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/supersub.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/tags.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/telugu.ucf
+%doc %{_texmfdistdir}/doc/latex/ucs/config/thai.ucf
 %doc %{_texmfdistdir}/doc/latex/ucs/discovermacro.pl
-%doc %{_texmfdistdir}/doc/latex/ucs/languages.pdf
+%doc %{_texmfdistdir}/doc/latex/ucs/languages.ps.gz
 %doc %{_texmfdistdir}/doc/latex/ucs/latexout.pl
 %doc %{_texmfdistdir}/doc/latex/ucs/ltxmacrs.txt
 %doc %{_texmfdistdir}/doc/latex/ucs/makeunidef.pl
+%doc %{_texmfdistdir}/doc/latex/ucs/ucs.dtx
+%doc %{_texmfdistdir}/doc/latex/ucs/ucs.ins
 %doc %{_texmfdistdir}/doc/latex/ucs/ucs.pdf
+%doc %{_texmfdistdir}/doc/latex/ucs/unsupported/README
+%doc %{_texmfdistdir}/doc/latex/ucs/unsupported/sym-to-fontenc.txt
+%doc %{_texmfdistdir}/doc/latex/ucs/unsupported/tables.inc
+%doc %{_texmfdistdir}/doc/latex/ucs/unsupported/u2ps
 
 #-----------------------------------------------------------------------
 %prep
