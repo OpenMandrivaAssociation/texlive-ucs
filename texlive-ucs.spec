@@ -1,12 +1,12 @@
-# revision 26123
+# revision 27549
 # category Package
 # catalog-ctan /macros/latex/contrib/ucs
-# catalog-date 2012-04-21 18:17:42 +0200
+# catalog-date 2012-08-28 17:41:15 +0200
 # catalog-license lppl1.3
-# catalog-version 2.0
+# catalog-version 2.1
 Name:		texlive-ucs
 Epoch:		1
-Version:	2.0
+Version:	2.1
 Release:	1
 Summary:	Extended UTF-8 input encoding support for LaTeX
 Group:		Publishing
@@ -178,6 +178,7 @@ no package of that name now exists.
 %{_texmfdistdir}/tex/latex/ucs/data/uni-42.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-44.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-46.def
+%{_texmfdistdir}/tex/latex/ucs/data/uni-465.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-468.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-469.def
 %{_texmfdistdir}/tex/latex/ucs/data/uni-47.def
