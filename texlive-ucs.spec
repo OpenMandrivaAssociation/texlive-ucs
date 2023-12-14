@@ -1,7 +1,7 @@
 Name:		texlive-ucs
 Epoch:		1
-Version:	64114
-Release:	2
+Version:	68759
+Release:	1
 Summary:	Extended UTF-8 input encoding support for LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ucs
