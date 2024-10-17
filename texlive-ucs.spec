@@ -4,7 +4,7 @@ Version:	68759
 Release:	1
 Summary:	Extended UTF-8 input encoding support for LaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ucs
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ucs
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ucs.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ucs.doc.r%{version}.tar.xz
